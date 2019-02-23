@@ -1,11 +1,28 @@
-  <h2>Top of menu</h2>
-    <ion-list>
-      <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-        <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-          <ion-icon slot="start" [name]="p.icon"></ion-icon>
-          <ion-label>
-            {{p.title}}
-          </ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-    </ion-list>
+<ion-split-pane>
+  <ion-menu contentId="leftMenu">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+
+      <h2>Top of menu</h2>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+          <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+            <ion-icon slot="start" [name]="p.icon"></ion-icon>
+            <ion-label>
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+
+
+    </ion-content>
+
+  </ion-menu>
+  <ion-router-outlet main id="leftMenu"></ion-router-outlet>
+</ion-split-pane>
